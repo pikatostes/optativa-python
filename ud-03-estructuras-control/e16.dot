@@ -1,31 +1,27 @@
-digraph G {
+digraph flow {
   rankdir=TB;
-  node [fontname="Arial", fontsize=12];
+  node [shape=rectangle, fontname="Consolas"];
 
-  start [shape=ellipse, style=filled, fillcolor=lightgreen, label="Inicio"];
-  end [shape=ellipse, style=filled, fillcolor=lightcoral, label="Fin"];
-
-  n0 [shape=box, style=filled, fillcolor="lightskyblue", label="num = -1"];
-  n1 [shape=diamond, style=filled, fillcolor="gold", label="while num < 0 or num > 99999:"];
-  n2 [shape=box, style=filled, fillcolor="lightskyblue", label="num = str(num)"];
-  n3 [shape=parallelogram, style=filled, fillcolor="mediumpurple1", label="print(f\"El número tiene {len(num)} dígitos\")"];
-
-  subgraph cluster_true_n1 {
-    style=filled; color=lightgrey; label="Verdadero";
-    t2_1 [shape=box, style=filled, fillcolor="white", label="num = int(input(\"Introduzca un número de 0 a 99999: \"))"];
-    t2_3 [shape=parallelogram, style=filled, fillcolor="mediumpurple1", label="print('Error. El número ha de ser entre 0 a 99999')"];
-    t2_1 -> t2_3;
-  }
-
-  subgraph cluster_false_n1 {
-    style=filled; color=lightblue; label="Falso";
-  }
-
-  start -> n0;
-  n0 -> n1;
-  n1 -> cluster_true_n1 [lhead=cluster_true_n1];
-  n1 -> cluster_false_n1 [lhead=cluster_false_n1];
+  n1 [label="INICIO\l", shape=ellipse];
+  n2 [label="num = -1\l"];
   n1 -> n2;
+  n3 [label="num < 0 or num > 99999\l", shape=diamond];
   n2 -> n3;
-  n3 -> end;
+  n4 [label="\l", shape=ellipse];
+  subgraph cluster_5 {
+    style=dashed;
+    label="While Body";
+  n6 [label="num = int(input('Introduzca un número de 0 a 99999: '))\l"];
+  n3 -> n6;
+  n7 [label="\l", shape=ellipse];
+  n6 -> n7;
+  }
+  n7 -> n3 [label="True"];
+  n3 -> n4 [label="False"];
+  n8 [label="num = str(num)\l"];
+  n4 -> n8;
+  n9 [label="print(f'El número tiene {len(num)} dígitos')\l"];
+  n8 -> n9;
+  n10 [label="FIN\l", shape=ellipse];
+  n9 -> n10;
 }
