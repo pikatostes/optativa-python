@@ -1,0 +1,12 @@
+digraph G {
+  rankdir=TB;
+  node [fontname="Arial", fontsize=12];
+
+  start [shape=ellipse, style=filled, fillcolor=lightgreen, label="Inicio"];
+  end [shape=ellipse, style=filled, fillcolor=lightcoral, label="Fin"];
+
+  n0 [shape=parallelogram, style=filled, fillcolor="mediumpurple1", label="print(\"Buenas tardes\")"];
+
+  start -> n0;
+  n0 -> end;
+}

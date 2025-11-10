@@ -6,8 +6,12 @@ substract = num1 - num2
 multiply = num1 * num2
 divide = num1 / num2
 
-print("Los resultados son: ")
-print("Suma:" ,add)
-print("Resta:" ,substract)
-print("Multiplicación:" ,multiply)
-print("División:" ,divide)
+operaciones = [
+    {add, "suma"},
+    {substract, "resta"},
+    {multiply, "multiplicación"},
+    {divide, "división"}]
+
+for resultado, operacion in operaciones:
+    print(f"El resultado de {operacion} es {resultado}")
+    

@@ -1,4 +1,4 @@
-lado = int(input("Introduzca el area del cuadrado: "))
+lado = float(input("Introduzca el area del cuadrado: "))
 
 area = lado ** 2
 
