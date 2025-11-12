@@ -1,0 +1,23 @@
+digraph flow {
+  rankdir=TB;
+  node [shape=rectangle, fontname="Consolas"];
+
+  n1 [label="INICIO\l", shape=ellipse];
+  n2 [label="num1 = float(input('Introduce el primer número: '))\l"];
+  n1 -> n2;
+  n3 [label="num2 = float(input('Introduce el segundo número: '))\l"];
+  n2 -> n3;
+  n4 [label="num1 > num2\l", shape=diamond];
+  n3 -> n4;
+  n5 [label="print(f'{num1} > {num2}')\l"];
+  n4 -> n5;
+  n4 -> n5 [label="True"];
+  n6 [label="print(f'{num2} > {num1}')\l"];
+  n4 -> n6;
+  n4 -> n6 [label="False"];
+  n7 [label="\l", shape=ellipse];
+  n5 -> n7;
+  n6 -> n7;
+  n8 [label="FIN\l", shape=ellipse];
+  n7 -> n8;
+}

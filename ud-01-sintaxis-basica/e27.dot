@@ -1,0 +1,48 @@
+digraph flow {
+  rankdir=TB;
+  node [shape=rectangle, fontname="Consolas"];
+
+  n1 [label="INICIO\l", shape=ellipse];
+  n2 [label="opcion = 0\l"];
+  n1 -> n2;
+  n3 [label="notaDiez = False\l"];
+  n2 -> n3;
+  n4 [label="opcion != -1\l", shape=diamond];
+  n3 -> n4;
+  n5 [label="\l", shape=ellipse];
+  subgraph cluster_6 {
+    style=dashed;
+    label="While Body";
+  n7 [label="opcion = int(input('Introduzca un número entero del 0 al 10 (-1 para terminar): '))\l"];
+  n4 -> n7;
+  n8 [label="opcion == -1\l", shape=diamond];
+  n7 -> n8;
+  n9 [label="break\l"];
+  n8 -> n9;
+  n10 [label="opcion == 10\l", shape=diamond];
+  n8 -> n10;
+  n11 [label="notaDiez = True\l"];
+  n10 -> n11;
+  n10 -> n11 [label="True"];
+  n12 [label="\l", shape=ellipse];
+  n11 -> n12;
+  n8 -> n12 [label="False"];
+  n13 [label="\l", shape=ellipse];
+  n12 -> n13;
+  }
+  n13 -> n4 [label="True"];
+  n4 -> n5 [label="False"];
+  n14 [label="notaDiez\l", shape=diamond];
+  n5 -> n14;
+  n15 [label="print('Se introdujo un diez')\l"];
+  n14 -> n15;
+  n14 -> n15 [label="True"];
+  n16 [label="print('No se introdujo un diez')\l"];
+  n14 -> n16;
+  n14 -> n16 [label="False"];
+  n17 [label="\l", shape=ellipse];
+  n15 -> n17;
+  n16 -> n17;
+  n18 [label="FIN\l", shape=ellipse];
+  n17 -> n18;
+}

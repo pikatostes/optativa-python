@@ -1,0 +1,19 @@
+digraph flow {
+  rankdir=TB;
+  node [shape=rectangle, fontname="Consolas"];
+
+  n1 [label="INICIO\l", shape=ellipse];
+  n2 [label="edad = int(input('Introduzca su edad: '))\l"];
+  n1 -> n2;
+  n3 [label="\l", shape=ellipse];
+  n2 -> n3;
+  n4 [label="edad >= 18\l", shape=diamond];
+  n3 -> n4;
+  n5 [label="print('Eres mayor de edad')\l"];
+  n4 -> n5;
+  n4 -> n5 [label="True"];
+  n6 [label="\l", shape=ellipse];
+  n5 -> n6;
+  n7 [label="FIN\l", shape=ellipse];
+  n6 -> n7;
+}

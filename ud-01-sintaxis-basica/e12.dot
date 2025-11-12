@@ -1,0 +1,20 @@
+digraph flow {
+  rankdir=TB;
+  node [shape=rectangle, fontname="Consolas"];
+
+  n1 [label="INICIO\l", shape=ellipse];
+  n2 [label="for i in range(1, 201, 1)\l", shape=diamond];
+  n1 -> n2;
+  n3 [label="i % 2 == 0\l", shape=diamond];
+  n2 -> n3;
+  n4 [label="print(i)\l"];
+  n3 -> n4;
+  n3 -> n4 [label="True"];
+  n5 [label="\l", shape=ellipse];
+  n4 -> n5;
+  n5 -> n2;
+  n6 [label="AfterFor\l"];
+  n2 -> n6 [label="Done"];
+  n7 [label="FIN\l", shape=ellipse];
+  n6 -> n7;
+}
