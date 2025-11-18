@@ -1,13 +1,15 @@
 height = int(input("Introduce the height: "))
 
-for i in range(0, height):
+# Mitad superior
+for i in range(height):
     if i == 0:
-        print(" " * height + " *")
+        print("*")
     else:
-        print(" " * (height - i) + "*" + " " * i + "*")
-    
-for j in range(height, -1, -1):
-    if j == 0:
-        print(" " * height + " *")
+        print("*" + " " * i + "*")
+
+# Mitad inferior (sin repetir el vértice central)
+for i in range(height - 2, -1, -1):
+    if i != 0:
+        print("*" + " " * i + "*")
     else:
-        print(" " * (height-j) + "*" + " " * j + "*")
+        print("*")
