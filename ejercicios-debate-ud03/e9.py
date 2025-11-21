@@ -1,33 +1,29 @@
-height = int(input("Introduce the height: "))
+height = int(input("Introduce an ODD height: "))
+
+if height % 2 == 0:
+    print("Height must be odd")
+    exit()
 
 mid = height // 2
 line3a = mid - 1
 line3b = mid + 1
 
-for i in range(height):
-    line = "*"
-    for j in range(1, height - 1):
-
-        # Bordes arriba y abajo
-        if i == 0 or i == height - 1:
-            line += "*"
-
-        # Línea SOLO con bordes
-        elif i == mid:
-            line += " "
-
-        # Líneas con EXACTAMENTE 3 asteriscos (los bordes + uno interior)
-        elif i == line3a or i == line3b:
-            if j == i or j == (height - 1 - i):
-                line += "*"     # único asterisco interior
-            else:
-                line += " "
-
-        # Resto: X normal
-        elif j == i or j == (height - 1 - i):
-            line += "*"
-        else:
-            line += " "
-
-    line += "*"
-    print(line)
+for i in range(height // 2+1):
+    if i == 0:
+        print("*" * height)
+    elif i == mid:
+        print("*" + " " * (height-2) + "*")
+    elif i == height // 2-1:
+        print("*" + " " * i + "*" + " " * i + "*")
+    else:
+        print("*" + " " * i + "*" + " " * (height-2*i-4) + "*" + " " * i + "*")
+        
+for i in range(height // 2 - 1, -1, -1):
+    if i == 0:
+        print("*" * height)
+    elif i == mid:
+        print("*" + " " * (height-2) + "*")
+    elif i == height // 2-1:
+        print("*" + " " * i + "*" + " " * i + "*")
+    else:
+        print("*" + " " * i + "*" + " " * (height-2*i-4) + "*" + " " * i + "*")
