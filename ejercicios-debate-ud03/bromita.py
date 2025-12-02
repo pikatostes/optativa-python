@@ -1,12 +1,5 @@
 height = int(input("Introduce a height: "))
 
-if height == 88:
-    print("Heil Hitler")
-    exit()
-elif height == 1945:
-    print("R.I.P. Manin")
-    exit()
-
 for i in range(height):
     if i == 0:
         print("#" + "  " * (height - 1) + "#" + "#" * (height * 2))

@@ -1,0 +1,1 @@
+# Extraer subcadenas usando slicing (rebanado de cadenas sin usar listas).
